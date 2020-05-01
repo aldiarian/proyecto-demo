@@ -1,0 +1,49 @@
+{{#each menuSidebar}}
+<aside class="menu-sidebar">
+    <div class="menu-sidebar__button">
+        <span class="menu-sidebar__button-txt">{{buttontxt}}</span>
+        <span class="menu-sidebar__button-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </span>
+    </div>
+    <ul class="menu-sidebar__list">
+        {{#each list}}
+        <li class="menu-sidebar__list-item has-sublist">
+            <a class="menu-sidebar__list-item-link" href="#">
+                <span class="menu-sidebar__list-item-icon">
+                    {{> icon-selector }}
+                </span>
+                <span class="menu-sidebar__list-item-txt">{{txt}}</span>
+                {{#if sublist}}
+                <span class="menu-sidebar__list-item-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-chevron-down">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </span>
+                {{/if}}
+            </a>
+            {{#if sublist}}
+            <ul class="menu-sidebar__list menu-sidebar__list--sublist">
+                {{#each sublist}}
+                <li class="menu-sidebar__list-item">
+                    <a href="" class="menu-sidebar__list-item-link">
+                        <span class="menu-sidebar__list-item-txt">{{txt}}</span>
+                    </a>
+                </li>
+                {{/each}}
+            </ul>
+            {{/if}}
+        </li>
+        {{/each}}
+
+    </ul>
+</aside>
+
+{{/each}}

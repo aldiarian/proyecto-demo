@@ -1,0 +1,62 @@
+{
+    "menuSidebar": [
+        {
+            "buttontxt": "Live Demo Preview",
+            "list": [
+                {
+                    "href": "enlace_href",
+                    "txt": "Dashboard",
+                    "icon" : "uno"
+                },
+                {
+                    "href": "enlace_href",
+                    "txt": "Applications",
+                    "icon" : "dos",
+                    "sublist": [
+                        {
+                            "href": "enlace_href",
+                            "txt": "Mailbox"
+                        },
+                        {
+                            "href": "enlace_href",
+                            "txt": "Chat"
+                        },
+                        {
+                            "href": "enlace_href",
+                            "txt": "Forums"
+                        }
+                    ]
+                },
+                {
+                    "href": "enlace_href",
+                    "txt": "Elements",
+                    "icon" : "tres"
+                },
+                {
+                    "href": "enlace_href",
+                    "txt": "Tables",
+                    "icon" : "cinco"
+                },
+                {
+                    "href": "enlace_href",
+                    "txt": "Applications",
+                    "icon" : "cuatro",
+                    "sublist": [
+                        {
+                            "href": "enlace_href",
+                            "txt": "Mailbox"
+                        },
+                        {
+                            "href": "enlace_href",
+                            "txt": "Chat"
+                        },
+                        {
+                            "href": "enlace_href",
+                            "txt": "Forums"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
