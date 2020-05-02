@@ -1,0 +1,118 @@
+
+@import './variables';
+
+.menu-sidebar{
+    background-color: var(--menu-sidebar-bgc, black);
+    width: var(--menu-sidebar-width, 400px);
+    height: 100%;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    overflow-y: auto;
+    overflow: -moz-scrollbars-none;
+    z-index: 1;
+    font-size: 1rem;
+    font-family: arial;
+    @include trasitionAction();
+    @include shadowBoxes();
+    cursor: pointer;
+    &::-webkit-scrollbar {
+        width: 4px;
+        background-color: var(--menu-sidebar-scroll-bgc, grey);
+    }
+    &::-webkit-scrollbar-thumb{
+        background-color:  var(--menu-sidebar-scroll-thumb-bgc, rgb(78, 78, 78));
+    }
+    &__list{
+        width: 90%;
+        margin: 1rem auto;
+        padding: 0;
+        list-style: none;
+        &-item{
+            margin: .2rem 0;
+            &-link{
+                color: var(--menu-sidebar-link-color, white);
+                text-decoration: none;
+                display: flex;
+                padding: 0.7rem 1rem;
+                border-radius: 5px;
+                position: relative;
+                align-items: center;
+                &:hover, 
+                &.link-selected{
+                    background-color: var(--menu-sidebar-link-hover-bgc,gray);
+                }
+                .menu-sidebar--closed &{
+                    padding: 0.5rem;
+                }
+                *{
+                    pointer-events:  none ;
+                }
+            }
+            &-icon {
+                width: 20px;
+                height: 20px;
+                margin-right: .5rem;
+                svg{
+                    width: 100%;
+                }
+                .menu-sidebar--closed &{
+                    margin: 0 auto;
+                }
+            }
+            &-txt{
+                .menu-sidebar--closed &{
+                    display: none;
+                }
+            }
+            &-toggle svg{
+                width: 20px;
+                position: absolute;
+                top:25%;
+                right:.5rem;
+                color: var(--menu-sidebar-toogle-svg-color, white);
+                @include trasitionAction();
+                .list-open &{
+                    transform: rotate(180deg);
+                }
+                .menu-sidebar--closed &{
+                    display: none;
+                }
+            }
+        }
+        &--sublist{
+            margin-left: 1rem;
+            display: none;
+            position: relative;
+            .list-open &{
+                display: block;
+            }
+        }
+    }
+    &__button{
+        position: sticky;
+        top: 0;
+        height: 2.5rem;
+        display: flex;
+        background-color: var(--menu-sidebar-button-bgc, white);
+        justify-content: space-between;
+        align-items: center;
+        color:  var(--menu-sidebar-button-color, black);
+        padding: 0 2rem;
+        &-icon{
+            width: 20px;
+            height: 20px;
+        }
+        .menu-sidebar--closed &{
+            padding: 0;
+            justify-content: center;
+            &-txt{
+                display: none;
+            }
+        }
+    }
+    &--closed &{
+        width:  var(--menu-sidebar-closed, 50px);
+        overflow: hidden;
+    }
+}

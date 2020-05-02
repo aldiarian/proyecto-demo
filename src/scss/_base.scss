@@ -1,0 +1,26 @@
+body{
+    background-color: white;
+}
+.main-container{
+    display: flex;
+}
+
+.base-container{
+    position: relative;
+    margin-left: var(--menu-sidebar-open, 300px);
+    @include trasitionAction();
+    .menu-closed &{
+        margin-left:var(--menu-sidebar-closed, 50px);
+        overflow: hidden;
+    }
+}
+
+.menu-header{
+    &__list{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        align-items: baseline;
+    }
+}

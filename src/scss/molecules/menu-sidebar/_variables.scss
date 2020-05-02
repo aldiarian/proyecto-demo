@@ -1,0 +1,16 @@
+.menu-sidebar{
+    --menu-sidebar-bgc             : var(--color-black-one);
+    --menu-sidebar-width           : 300px;
+    --menu-sidebar-scroll-bgc      : var(--color-black-two);
+    --menu-sidebar-scroll-thumb-bgc: var(--color-gray-one);
+    --menu-sidebar-link-color      : var(--color-gray-two);
+    --menu-sidebar-link-hover-bgc  : var(--color-black-two);
+    --menu-sidebar-toogle-svg-color: var(--color-gray-two);
+    --menu-sidebar-button-bgc      : var(--color-gray-one);
+    --menu-sidebar-button-color    : var(--color-black-one);
+    --menu-sidebar-closed          : 50px;
+}
+
+.menu-sidebar-theme{
+    --menu-sidebar-bgc             : red;
+}

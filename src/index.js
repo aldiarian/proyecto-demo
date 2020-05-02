@@ -9,7 +9,7 @@ let menuSidebarList = document.querySelector('.menu-sidebar__list')
 let mainContainer = document.querySelector('.main-container');
 
 menuSidebarList.addEventListener('mouseover', ()=>{
-    mainContainer.classList.contains("menu-closed") ? mainContainer.classList.remove("menu-closed") : '';
+    mainContainer.classList.contains("menu-sidebar--closed") ? mainContainer.classList.remove("menu-sidebar--closed") : '';
 })
 menuSidebar.addEventListener('click', (e) => {
     console.log(e.target);
@@ -17,7 +17,7 @@ menuSidebar.addEventListener('click', (e) => {
     let elemento = e.target;
     switch (true) {
         case elemento.matches('.menu-sidebar__button , .menu-sidebar__button *'):
-            mainContainer.classList.toggle("menu-closed");
+            mainContainer.classList.toggle("menu-sidebar--closed");
             break;
         case elemento.matches('.menu-sidebar__list-item-link'):
             elemento.classList.toggle('link-selected');
