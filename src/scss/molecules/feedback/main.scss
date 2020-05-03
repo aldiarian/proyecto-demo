@@ -1,0 +1,23 @@
+
+
+$feedback-msg: failure,info,success;
+
+.m-feedback{
+    --feedback: var(--border-radius);
+    --feedback-bgc: var(--color-feedback);
+}
+
+.m-feedback{
+    border-radius: var(--feedback, 10px);
+    background-color: var(--feedback-bgc, #EEEE8F);
+    display: inline-block;
+    &__txt{
+        padding: .2rem .8rem;
+        margin: 0;
+    }
+    @each $msg in $feedback-msg {
+        &--#{$msg} {
+            --feedback-bgc: var(--color-#{$msg});
+        }
+    }
+}

@@ -1,8 +1,8 @@
 {{#each menuSidebar}}
-<aside class="menu-sidebar">
-    <div class="menu-sidebar__button">
-        <span class="menu-sidebar__button-txt">{{buttontxt}}</span>
-        <span class="menu-sidebar__button-icon">
+<aside class="m-menu-sidebar">
+    <div class="m-menu-sidebar__button">
+        <span class="m-menu-sidebar__button-txt">{{buttontxt}}</span>
+        <span class="m-menu-sidebar__button-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
                 <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -11,16 +11,16 @@
             </svg>
         </span>
     </div>
-    <ul class="menu-sidebar__list">
+    <ul class="m-menu-sidebar__list">
         {{#each list}}
-        <li class="menu-sidebar__list-item has-sublist">
-            <a class="menu-sidebar__list-item-link" href="#">
-                <span class="menu-sidebar__list-item-icon">
+        <li class="m-menu-sidebar__list-item has-sublist">
+            <a class="m-menu-sidebar__list-item-link" href="#">
+                <span class="m-menu-sidebar__list-item-icon">
                     {{> icon-selector }}
                 </span>
-                <span class="menu-sidebar__list-item-txt">{{txt}}</span>
+                <span class="m-menu-sidebar__list-item-txt">{{txt}}</span>
                 {{#if sublist}}
-                <span class="menu-sidebar__list-item-toggle">
+                <span class="m-menu-sidebar__list-item-toggle">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                         class="feather feather-chevron-down">
@@ -30,11 +30,11 @@
                 {{/if}}
             </a>
             {{#if sublist}}
-            <ul class="menu-sidebar__list menu-sidebar__list--sublist">
+            <ul class="m-menu-sidebar__list m-menu-sidebar__list--sublist">
                 {{#each sublist}}
-                <li class="menu-sidebar__list-item">
-                    <a href="" class="menu-sidebar__list-item-link">
-                        <span class="menu-sidebar__list-item-txt">{{txt}}</span>
+                <li class="m-menu-sidebar__list-item">
+                    <a href="" class="m-menu-sidebar__list-item-link">
+                        <span class="m-menu-sidebar__list-item-txt">{{txt}}</span>
                     </a>
                 </li>
                 {{/each}}

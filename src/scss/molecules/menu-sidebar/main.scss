@@ -1,7 +1,8 @@
+// molecule menu-sidebar
 
 @import './variables';
 
-.menu-sidebar{
+.m-menu-sidebar{
     background-color: var(--menu-sidebar-bgc, black);
     width: var(--menu-sidebar-width, 400px);
     height: 100%;
@@ -12,7 +13,6 @@
     overflow: -moz-scrollbars-none;
     z-index: 1;
     font-size: 1rem;
-    font-family: arial;
     @include trasitionAction();
     @include shadowBoxes();
     cursor: pointer;
@@ -42,7 +42,7 @@
                 &.link-selected{
                     background-color: var(--menu-sidebar-link-hover-bgc,gray);
                 }
-                .menu-sidebar--closed &{
+                .m-menu-sidebar--closed &{
                     padding: 0.5rem;
                 }
                 *{
@@ -56,12 +56,12 @@
                 svg{
                     width: 100%;
                 }
-                .menu-sidebar--closed &{
+                .m-menu-sidebar--closed &{
                     margin: 0 auto;
                 }
             }
             &-txt{
-                .menu-sidebar--closed &{
+                .m-menu-sidebar--closed &{
                     display: none;
                 }
             }
@@ -75,7 +75,7 @@
                 .list-open &{
                     transform: rotate(180deg);
                 }
-                .menu-sidebar--closed &{
+                .m-menu-sidebar--closed &{
                     display: none;
                 }
             }
@@ -103,7 +103,7 @@
             width: 20px;
             height: 20px;
         }
-        .menu-sidebar--closed &{
+        .m-menu-sidebar--closed &{
             padding: 0;
             justify-content: center;
             &-txt{

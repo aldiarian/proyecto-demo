@@ -1,9 +1,10 @@
+@import './atoms/normalize';
+@import './atoms/fonts';
 @import './settings/mixins';
-@import './settings/variables';
-
-@import './base';
-
-@import './molecules/menu-sidebar/main.scss';
+@import './settings/settings';
+@import './base/base';
+@import './molecules/menu-sidebar/main';
+@import './molecules/feedback/main';
 
 
 

@@ -1,26 +1,15 @@
 body{
     background-color: white;
-}
-.main-container{
-    display: flex;
+    font-family: var(--primary-font);
 }
 
-.base-container{
+.a-main-container {
     position: relative;
+    padding: 0 1rem;
     margin-left: var(--menu-sidebar-open, 300px);
     @include trasitionAction();
-    .menu-closed &{
+    .m-menu-sidebar--closed &{
         margin-left:var(--menu-sidebar-closed, 50px);
         overflow: hidden;
-    }
-}
-
-.menu-header{
-    &__list{
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        display: flex;
-        align-items: baseline;
     }
 }
