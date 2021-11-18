@@ -7,6 +7,15 @@
 @use 'atoms/layout';
 @use 'molecules/menu-sidebar';
 @use 'molecules/feedback';
-@use 'molecules/card';
-@include card.ue-c-card;
+@use 'molecules/card'  as * with (
 
+    $ue-c-card-vars: (
+        desktop: ( 
+            element: ( 
+                background-color: red,
+            ),
+        )
+    )
+);
+
+@include ue-c-card;
