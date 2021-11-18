@@ -1,0 +1,26 @@
+@use 'sass:map';
+@use 'sass:meta';
+
+$ue-c-card-vars: (
+    desktop: ( element: ( ) )
+);
+$fonts: (
+  "Helvetica": (
+    "weights": (
+      "regular": 400,
+      "medium": 500,
+      "bold": 700
+    )
+  )
+);
+
+
+@mixin ue-c-card{
+    .ue-c-card{
+        width: 200px;
+        height: 200px;
+        background-color: map.get($ue-c-card-vars, desktop, element, background-color) ;
+        @debug map.get($fonts, "Helvetica", "weights", "regular"); // 400
+
+    }
+}

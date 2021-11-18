@@ -1,10 +1,12 @@
-@import './atoms/normalize';
-@import './atoms/fonts';
-@import './settings/mixins';
-@import './settings/settings';
-@import './base/base';
-@import './molecules/menu-sidebar/main';
-@import './molecules/feedback/main';
-
-
+// @use 'settings';
+@use 'base/base';
+@use 'atoms/normalize';
+@use 'atoms/colors';
+@use 'atoms/fonts';
+@use 'atoms/buttons';
+@use 'atoms/layout';
+@use 'molecules/menu-sidebar';
+@use 'molecules/feedback';
+@use 'molecules/card';
+@include card.ue-c-card;
 

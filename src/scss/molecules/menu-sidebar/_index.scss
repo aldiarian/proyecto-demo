@@ -1,6 +1,7 @@
 // molecule menu-sidebar
 
-@import './variables';
+@use './variables' as *;
+@use '../../settings/mixins';
 
 .m-menu-sidebar{
     background-color: var(--menu-sidebar-bgc, black);
@@ -13,8 +14,8 @@
     overflow: -moz-scrollbars-none;
     z-index: 1;
     font-size: 1rem;
-    @include trasitionAction();
-    @include shadowBoxes();
+    @include mixins.trasitionAction();
+    @include mixins.shadowBoxes();
     cursor: pointer;
     &::-webkit-scrollbar {
         width: 4px;
@@ -71,7 +72,7 @@
                 top:25%;
                 right:.5rem;
                 color: var(--menu-sidebar-toogle-svg-color, white);
-                @include trasitionAction();
+                @include mixins.trasitionAction();
                 .list-open &{
                     transform: rotate(180deg);
                 }
@@ -111,8 +112,12 @@
             }
         }
     }
-    &--closed &{
+    &--closed{
         width:  var(--menu-sidebar-closed, 50px);
         overflow: hidden;
+        ~ .a-main-container {
+            margin-left:var(--menu-sidebar-closed, 50px);
+            overflow: hidden;
+        }
     }
 }

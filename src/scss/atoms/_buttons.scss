@@ -1,0 +1,21 @@
+@use 'sass:string';
+
+.a-button{
+    padding: 0.4rem 0.8rem;
+    border:transparent;
+    border-radius: var(--border-radius);
+    background-color: var(--color-button);
+    &:hover{
+        cursor: pointer;
+        opacity: 0.8;
+    }
+    &--disabled{
+        background-color: var(--color-button-disabled);
+        color:white;
+        &:hover{
+            background-color: var(--color-button-disabled);
+            color:white;
+            cursor:not-allowed;
+        }
+    }
+}

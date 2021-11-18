@@ -1,5 +1,5 @@
 {{#each menuSidebar}}
-<aside class="m-menu-sidebar">
+<aside class="m-menu-sidebar ">
     <div class="m-menu-sidebar__button">
         <span class="m-menu-sidebar__button-txt">{{buttontxt}}</span>
         <span class="m-menu-sidebar__button-icon">
@@ -16,7 +16,7 @@
         <li class="m-menu-sidebar__list-item has-sublist">
             <a class="m-menu-sidebar__list-item-link" href="#">
                 <span class="m-menu-sidebar__list-item-icon">
-                    {{> icon-selector }}
+                    {{> icons/icon-selector }}
                 </span>
                 <span class="m-menu-sidebar__list-item-txt">{{txt}}</span>
                 {{#if sublist}}
@@ -45,5 +45,4 @@
 
     </ul>
 </aside>
-
 {{/each}}

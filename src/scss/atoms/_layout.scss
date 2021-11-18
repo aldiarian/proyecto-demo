@@ -1,0 +1,188 @@
+
+:root{
+
+    --gap: 8px;
+    --article-padding:0.3rem;
+
+    --template-base-one: 
+    "aside      header      header"
+    "aside      main        main"
+    "aside      footer      footer";
+
+    --article-l-one: 
+    "a-image    a-image     a-txt       a-txt       a-txt       a-txt"
+    "a-footer   a-footer    a-footer    a-footer    a-footer    a-footer ";
+
+    --article-l-two: 
+    "a-image    a-image     a-txt       a-txt       a-txt       a-txt    "
+    "a-image    a-image     a-footer    a-footer    a-footer    a-footer ";
+
+    --article-l-three: 
+    "a-txt      a-txt       a-txt       a-txt       a-image     a-image"
+    "a-footer   a-footer    a-footer    a-footer    a-footer    a-footer ";
+
+    --grid-cover-flex-one-mobile:
+    "one"
+    "two"
+    "three"
+    "four"
+    "five";
+    --grid-cover-flex-one: 
+    "one       one      one      one      one      three    three    three    three    three    four     four  "
+    "two       two      two      two      two      three    three    three    three    three    five     five  ";
+    
+
+    --grid-cover-flex-two-mobile: 
+    "one"
+    "two"
+    "three"
+    "ad";
+    --grid-cover-flex-two: 
+    "one       one      one      two      two      two      ad       ad       ad       ad       ad       ad    "
+    "three     three    three    three    three    three    ad       ad       ad       ad       ad       ad    ";
+    
+
+    --grid-cover-flex-three:
+    "one       one      one      one      two      two      two       two       three       three       three       three";
+    --grid-cover-flex-three-mobile: 
+    "one"
+    "two"
+    "three";
+    
+   
+}
+
+$tablet: 720px;
+$elements:(ad, one,two,three,four,five,six);
+
+.l-content{
+    max-width: 1700px;
+    margin: 0 auto;
+    display: grid;
+    grid-gap: var(--gap);
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-areas: 
+    "pbl-h      pbl-h       pbl-h"
+    "pbl-l      main        pbl-r"
+    "pbl-l      footer      pbl-r"
+    ;
+}
+
+.l-content--body{
+    display: grid;
+    grid-gap: var(--gap);
+    grid-template-columns: 1f;
+    grid-area: main;
+}
+
+.l-content-footer{
+    grid-area: footer;
+    background-color: rgb(231, 231, 231);
+    align-self: end;  
+}
+
+.l-publi{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: teal;
+    &-horizontal{
+        grid-area: pbl-h;
+        height: 100px;
+        align-self: end;  
+    }
+    &-left{
+        grid-area: pbl-l;
+    }
+    &-right{
+        grid-area: pbl-r;
+    }
+}
+
+
+
+@mixin l-center{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.elment-ad{
+	width: 200px;
+	height: 200px;
+	position: sticky;
+	top: var(--gap);
+	display: inline-block;
+	margin:0 auto;
+    margin-top: calc(-1 * var(--gap));
+    @include l-center;
+    
+}
+
+
+.l-grid{
+    border: 1px solid black;
+    display: grid;
+    font-size: 100%;
+    font-family: sans-serif;
+    line-height: 1.4;
+    grid-template-columns: 1fr;
+    @media (min-width: $tablet){
+        grid-template-columns: repeat(12, 1fr);
+    }
+    grid-template-areas: var(--grid-cover-flex-mobile);
+    grid-gap: var(--gap);
+    min-height: 200px;
+    &--element{
+        display: flex;
+        flex-wrap: wrap;
+        @each $elem in $elements{
+            &-#{$elem}{
+                grid-area: #{$elem};
+            }
+        }
+    }
+    &--flex{
+        &-one{
+            grid-template-areas: var(--grid-cover-flex-one-mobile);
+            @media (min-width: $tablet){
+                grid-template-areas: var(--grid-cover-flex-one);
+            }
+        }
+        &-two{
+            grid-template-areas: var(--grid-cover-flex-two-mobile);
+            @media (min-width: $tablet){
+                grid-template-areas: var(--grid-cover-flex-two);
+            }
+        }
+        &-three{
+            grid-template-areas: var(--grid-cover-flex-three-mobile);
+            @media (min-width: $tablet){
+                grid-template-areas: var(--grid-cover-flex-three);
+            }
+        }
+    }
+}
+
+.cover-ad{
+    width: 150px;
+    height: 150px;
+    background-color: #7fb8fad8;
+}
+.cover-news{
+    background-color: aqua;
+    display: flex;
+    width: 100%;
+    min-height: 160px;
+    margin-bottom: var(--gap);
+    display: grid;
+    &:last-of-type{
+        margin-bottom: 0;
+    }
+    figure{
+        margin:0;
+        padding:0;
+    }
+    
+}

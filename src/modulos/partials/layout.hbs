@@ -1,0 +1,26 @@
+<div class="l-content">
+    <div class="l-publi l-publi-horizontal">publi horizontal </div>
+    <div class="l-publi l-publi-left">publi left </div>
+    <div class="l-publi l-publi-right">publi right</div>
+    <main class="l-content--body ">
+    {{#each flexBlock}}
+    <div class="l-grid {{classes}}">
+        {{#each elements}}
+        <div class="l-grid--element {{elementClass}}">
+            {{#each elementContent}}
+            <div class="{{class}}">
+                {{#if imagen}}
+                <figure>
+                    <img src="https://via.placeholder.com/240x160/ff7f7f/333333?text=Imagen" alt="">
+                </figure>
+                {{/if}}
+                {{txt}}
+            </div>
+            {{/each}}
+        </div>
+        {{/each}}
+    </div>
+    {{/each}}
+    </main>
+    <footer class="l-content-footer">footer</footer>
+</div>

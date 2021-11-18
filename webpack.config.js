@@ -5,6 +5,8 @@ const webpack = require('webpack');
 const HTMLWebpackPlugin = require("html-webpack-plugin");
 const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
 const postcss = require('postcss-cssnext');
+var sass = require('sass');
+
 
 
 
@@ -58,8 +60,7 @@ module.exports = {
         }),
         new HTMLWebpackPlugin({
             template: './src/modulos/index.hbs',
-            templateParameters: require('./src/modulos/data/maindata.json')
-
+            templateParameters: require('./src/modulos/data/maindata.js')
         }),
         new MiniCSSExtractPlugin()
     ]

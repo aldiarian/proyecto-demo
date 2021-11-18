@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&family=Nunito+Sans:ital,wght@0,200;0,400;0,700;1,200;1,400;1,700&display=swap');
 :root{
-    --primary-font: 'Nunito Sans', sans-serif;
-    --secondary-font: 'Lato';
+    --font-primary: 'Nunito Sans', sans-serif;
+    --font-secondary: 'Lato';
 }
 
 .a-font{
     &-primary{
-        font-family: var(--primary-font);
+        font-family: var(--font-primary);
     }
     &-secondary{
-        font-family: var(--secondary-font);
+        font-family: var(--font-secondary);
     }
 }
