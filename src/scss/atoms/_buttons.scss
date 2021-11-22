@@ -1,21 +1,23 @@
-@use 'sass:string';
+@use 'sass:map';
 
-.a-button{
-    padding: 0.4rem 0.8rem;
-    border:transparent;
-    border-radius: var(--border-radius);
-    background-color: var(--color-button);
-    &:hover{
-        cursor: pointer;
-        opacity: 0.8;
-    }
-    &--disabled{
-        background-color: var(--color-button-disabled);
-        color:white;
-        &:hover{
-            background-color: var(--color-button-disabled);
-            color:white;
-            cursor:not-allowed;
-        }
-    }
+
+$button: () !default;
+
+$_button: (
+    main:(
+        background-color: rgb(172, 157, 72),
+        border: 3px solid black,
+        color: rgb(148, 148, 148)
+    )
+) !default;
+
+$button: map.deep-merge($button,$_button );
+
+.button{
+    margin: .5rem 0;
+    padding: .5rem;
+    background-color: map-get($button, main, background-color );
+    border: map-get($button, main, border );
+    color: map-get($button, main, color );
 }
+

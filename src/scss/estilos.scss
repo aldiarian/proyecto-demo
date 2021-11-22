@@ -1,21 +1,12 @@
-// @use 'settings';
-@use 'base/base';
-@use 'atoms/normalize';
-@use 'atoms/colors';
-@use 'atoms/fonts';
-@use 'atoms/buttons';
-@use 'atoms/layout';
-@use 'molecules/menu-sidebar';
-@use 'molecules/feedback';
-@use 'molecules/card'  as * with (
 
-    $ue-c-card-vars: (
-        desktop: ( 
-            element: ( 
-                background-color: red,
-            ),
+@use 'sass:map';
+
+@use './atoms/main' as * with (
+    $boxes: (
+        main:(
+            background-color: grey,
+            border: 4px solid blue
         )
-    )
+    ) 
 );
 
-@include ue-c-card;

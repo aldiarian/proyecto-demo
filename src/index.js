@@ -1,6 +1,6 @@
 
-// import "@babel/polyfill";
-// import './modulos/helpers/componente';
+import "@babel/polyfill";
+import './modulos/helpers/componente';
 import './scss/estilos.scss';
 
 let menuSidebar = document.querySelector('.m-menu-sidebar');
